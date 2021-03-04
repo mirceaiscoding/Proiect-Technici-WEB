@@ -1,0 +1,11 @@
+*{
+    background-color: rgb(56, 144, 185);
+}
+
+.header{
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
