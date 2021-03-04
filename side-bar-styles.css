@@ -1,0 +1,14 @@
+.side-bar-item:hover{
+    color: rgb(56, 144, 185);
+}
+
+
+.side-bar-item{
+    color: black;
+}
+
+.side-bar-item{
+    border: 1px solid black;
+    padding: 5%;
+    border-spacing: 5px;
+}

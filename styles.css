@@ -1,5 +1,19 @@
 *{
-    background-color: rgb(56, 144, 185);
+    /* background-color: rgb(56, 144, 185); */
+}
+
+.side-bar{
+    height: 100%;
+    width: 150px;
+    position: fixed;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.075);
+}
+
+.next-to-side-bar{
+    margin-left: 150px;
 }
 
 .header{
@@ -8,4 +22,8 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+}
+
+a{
+    text-decoration: none;
 }
