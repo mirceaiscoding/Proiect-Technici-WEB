@@ -1,29 +1,47 @@
 *{
-    /* background-color: rgb(56, 144, 185); */
+    font-family: 'Noto Sans KR', sans-serif;
+    color: white;
 }
 
 .side-bar{
     height: 100%;
-    width: 150px;
+    width: 15%;
     position: fixed;
     padding-top: 20px;
     display: flex;
     flex-direction: column;
-    background-color: rgba(0, 0, 0, 0.075);
+    justify-content: space-evenly;
+    background-color: steelblue;
+    line-height: 30px;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
 }
 
 .next-to-side-bar{
-    margin-left: 150px;
+    margin-left: 15%;
 }
 
 .header{
     background-color: white;
+    border: 1px solid #c3c3c3;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    align-content: center;
+    justify-content: center;
 }
 
 a{
     text-decoration: none;
+}
+
+.workplace-photo{
+    height: 80%;
+    width: 100%;
+
+}
+
+.about-us{
+    width: 100%;
+    padding-left: 5%;
 }

@@ -1,14 +1,25 @@
+@media (max-width: 990px){
+    .side-bar-item{
+        color: steelblue;
+    }
+}
+
+
+@media (min-width: 990px){
+    .side-bar-item{
+        color: white;
+    }
+}
+
+
 .side-bar-item:hover{
-    color: rgb(56, 144, 185);
+    /* color: rgb(255, 245, 107); */
+    color: white;
 }
 
 
 .side-bar-item{
-    color: black;
-}
-
-.side-bar-item{
-    border: 1px solid black;
+    /* border: 1px solid white; */
     padding: 5%;
     border-spacing: 5px;
 }
