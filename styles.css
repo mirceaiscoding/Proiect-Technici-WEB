@@ -48,7 +48,7 @@ a{
 }
 
 .about-us-content{
-    color:black;
+    color:#797676;
     margin-left: 5%;
     margin-right: 5%;
 
@@ -71,6 +71,7 @@ a{
 
 
 .circle {
+    color:ghostwhite;
     background-color: #37c5a6;
     line-height:100px;
     text-decoration: none;
