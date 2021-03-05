@@ -60,6 +60,31 @@ a{
     text-align: center;
     font-family: 'Roboto Mono', monospace;
     margin-bottom: 5%;
-    border:1px solid black;
-    border-radius: 20em;
+}
+
+
+.procedures-menu{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+
+.circle {
+    background-color: #37c5a6;
+    line-height:100px;
+    text-decoration: none;
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.circle:hover{
+    background-color: #03886b;
+
+
+.procedures-menu-backgrount{
+    background-color: #f1f6f9;
 }
