@@ -10,7 +10,7 @@
     padding-top: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: space-between;
     background-color: steelblue;
     line-height: 30px;
     overflow: hidden;
@@ -19,7 +19,8 @@
 }
 
 .next-to-side-bar{
-    margin-left: 15%;
+    padding-left: 15%;
+    overflow: hidden;
 }
 
 .header{
@@ -43,9 +44,13 @@ a{
 
 .about-us{
     width: 100%;
-    padding-left: 5%;
+    background-color: rgba(223, 223, 223, 0.281);
+    margin-top: -1.7%;
 }
 
 .about-us-content{
     color: steelblue;
+    margin-left: 5%;
+    margin-right: 5%;
+
 }
