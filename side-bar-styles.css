@@ -9,17 +9,21 @@
     .side-bar-item{
         color: white;
     }
+    .side-bar-item:hover{
+        color: rgb(255, 241, 118);
+        font-size: medium;
+        font-weight: 400;
+    }
 }
 
 
-.side-bar-item:hover{
-    /* color: rgb(255, 245, 107); */
-    color: white;
-}
+
 
 
 .side-bar-item{
     /* border: 1px solid white; */
     padding: 5%;
     border-spacing: 5px;
+    font-size: small;
+    font-weight: 300;
 }
