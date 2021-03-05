@@ -39,7 +39,6 @@ a{
 .workplace-photo{
     height: 80%;
     width: 100%;
-
 }
 
 .about-us{
@@ -49,8 +48,18 @@ a{
 }
 
 .about-us-content{
-    color: steelblue;
+    color:black;
     margin-left: 5%;
     margin-right: 5%;
 
+}
+
+.subtitle{
+    
+    color: steelblue;
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: 5%;
+    border:1px solid black;
+    border-radius: 20em;
 }
