@@ -15,7 +15,20 @@
 }
 
 
-
+.side-bar{
+    height: 100%;
+    width: 15%;
+    position: fixed;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: steelblue;
+    line-height: 30px;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+}
 
 
 .side-bar-item{

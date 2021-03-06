@@ -1,3 +1,12 @@
+.header{
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    top: 0;
+}
+
 .header-logo{
     display: inline;
     height: 8em;
