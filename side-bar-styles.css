@@ -1,6 +1,34 @@
 @media (max-width: 990px){
     .side-bar-item{
         color: steelblue;
+        border: 1px solid rgb(57, 106, 146);
+    }
+    .side-bar{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        background-color: steelblue;
+        line-height: 15px;
+        overflow: hidden;
+        top: 0;
+        flex-wrap: wrap;
+    }
+    #side-bar-team{
+        display: none;
+    }
+    #side-bar-photos{
+        display: none;
+    }
+    #side-bar-prices{
+        display: none;
+    }
+    .side-bar-item{
+        /* border: 1px solid white; */
+        padding: 5%;
+        font-size: small;
+        font-weight: 100;
+        flex: 1;
     }
 }
 
@@ -12,30 +40,38 @@
     .side-bar-item:hover{
         background-color: rgb(57, 106, 146);
     }
+    .side-bar{
+        height: 100%;
+        width: 15%;
+        position: fixed;
+        padding-top: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background-color: steelblue;
+        line-height: 30px;
+        overflow: hidden;
+        top: 0;
+        bottom: 0;
+        flex-wrap: wrap;
+    }
+    .next-to-side-bar{
+        padding-left: 15%;
+        overflow: hidden;
+    }
+    .side-bar-item{
+        /* border: 1px solid white; */
+        padding: 5%;
+        border-spacing: 5px;
+        font-size: small;
+        font-weight: 300;
+        flex: 1;
+    }
+    .side-bar-item-text{
+        display: inline;
+    }
 }
 
 
-.side-bar{
-    height: 100%;
-    width: 15%;
-    position: fixed;
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: steelblue;
-    line-height: 30px;
-    overflow: hidden;
-    top: 0;
-    bottom: 0;
-}
 
 
-.side-bar-item{
-    /* border: 1px solid white; */
-    padding: 5%;
-    border-spacing: 5px;
-    font-size: small;
-    font-weight: 300;
-    flex: 1;
-}
