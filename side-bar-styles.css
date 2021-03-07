@@ -13,6 +13,7 @@
         overflow: hidden;
         top: 0;
         flex-wrap: wrap;
+        border: 1px ridge;
     }
     #side-bar-team{
         display: none;
@@ -29,6 +30,9 @@
         font-size: small;
         font-weight: 100;
         flex: 1;
+    }
+    #side-bar-item-text-book{
+        display: inline;
     }
 }
 
@@ -53,7 +57,9 @@
         overflow: hidden;
         top: 0;
         bottom: 0;
+        left: 0;
         flex-wrap: wrap;
+        border-left: 5px solid rgb(57, 106, 146);
     }
     .next-to-side-bar{
         padding-left: 15%;
