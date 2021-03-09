@@ -47,7 +47,7 @@ a{
 
 .subtitle{
     
-    color: steelblue;
+    color: #03886b;
     text-align: center;
     font-family: 'Roboto Mono', monospace;
     margin-bottom: 3%;
@@ -72,5 +72,5 @@ a{
 }
 
 .procedures-menu-backgrount{
-    background-color: #f1f6f9;
+    background-color: #f2fbf8;
 }
