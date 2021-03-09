@@ -1,3 +1,18 @@
+@media (max-width: 768px){
+    .header-logo{
+        height: 8em;
+    }
+}
+
+
+@media (min-width: 768px){
+    .header-logo{
+        height: 10em;
+    }
+}
+
+
+
 .header{
     background-color: white;
     display: flex;
@@ -7,17 +22,12 @@
     top: 0;
 }
 
-.header-logo{
-    display: inline;
-    height: 8em;
-}
 
-.header-brand-name{
-    color: rgb(56, 144, 185);
+
+/* .header-brand-name{
     background-color: white;
     display: inline;
     font-size: 2em;
     font-weight: 400;
     font-family: 'Roboto Mono', monospace;
-
-}
+} */

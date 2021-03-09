@@ -38,11 +38,11 @@
     color:#797676;
     margin-left: 5%;
     margin-right: 5%;
-
 }
 
 .procedures-menu{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    padding-bottom: 15px;
 }
