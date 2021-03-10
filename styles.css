@@ -78,6 +78,11 @@
         padding-bottom: 4em;
         padding-top: 1em;
     }
+
+    .workplace-book-now{
+        background: #03886b9f;
+        color: white;
+    }
 }
 
 @media (min-width:768px){
@@ -100,6 +105,11 @@
         border: 1px solid #ccc;
         box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
         width: 100%;
+    }
+
+    .photo-gallery-element:hover{
+        transition: all 1s ease;
+        opacity: 0.8;
     }
 
     .team-gallery{
@@ -125,6 +135,23 @@
         padding-top: 1em;
     }
 
+    .workplace-book-now{
+        color: black;
+        background: #05050542;
+    }
+    
+    
+    .workplace-book-now:hover{
+        transition: background-color 1.2s ease;
+        background: #03886b9f;
+        color: white;
+    }
+
+    .circle:hover{
+        background-color: #03886b;
+        transition: all 1s ease;
+    
+    }
 
 }
 
@@ -163,21 +190,13 @@ a{
     position: absolute;
     top: 40%;
     bottom: 60%;
-    color: black;
     left: 40%;
     right: 40%;
     align-self: center;
-    background: #05050542;
-    transition: all 0.8s ease;
+    transition: background-color 0.8s ease;
 
 }
 
-
-.workplace-book-now:hover{
-    transition: all 1.2s ease;
-    background: #03886b9f;
-    color: white;
-}
 
 
 .about-us{
@@ -216,9 +235,6 @@ a{
     text-align: center;
 }
 
-.circle:hover{
-    background-color: #03886b;
-}
 
 .procedures-menu-backgrount{
     background-color: #f2fbf8;
