@@ -168,10 +168,13 @@ a{
     right: 40%;
     align-self: center;
     background: #05050542;
+    transition: all 0.8s ease;
+
 }
 
 
 .workplace-book-now:hover{
+    transition: all 1.2s ease;
     background: #03886b9f;
     color: white;
 }

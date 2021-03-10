@@ -42,6 +42,7 @@
         color: white;
     }
     .side-bar-item:hover{
+        transition: background-color 0.8s ease;
         background-color: #03886b;
     }
     .side-bar{
@@ -58,7 +59,6 @@
         bottom: 0;
         left: 0;
         flex-wrap: wrap;
-        border-left: 5px solid #03886b;
     }
     .next-to-side-bar{
         padding-left: 15%;
