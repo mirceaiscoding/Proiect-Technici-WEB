@@ -73,6 +73,11 @@
     .team-member-photo{
         width: 50%;
     }
+
+    .workplace-book-now{
+        padding-bottom: 4em;
+        padding-top: 1em;
+    }
 }
 
 @media (min-width:768px){
@@ -115,6 +120,11 @@
         width: 50%;
     }
 
+    .workplace-book-now{
+        padding-bottom: 2.5em;
+        padding-top: 1em;
+    }
+
 
 }
 
@@ -141,7 +151,6 @@ a{
     background: rgb(255, 255, 255);
     overflow: hidden;
     width: 100%;
-    margin-left: 10px;
 }
 
 .workplace-photo{
@@ -158,8 +167,6 @@ a{
     left: 40%;
     right: 40%;
     align-self: center;
-    padding-bottom: 2.5em;
-    padding-top: 1em;
     background: #05050542;
 }
 
