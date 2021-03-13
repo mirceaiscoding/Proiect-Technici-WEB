@@ -242,16 +242,13 @@ a{
 }
 
 
-.procedures-menu-backgrount{
-    background-color: #f2fbf8;
-}
 
 
 .footer-text{
-    background-color: #f2fbf8;
     color: black;
     text-align: center;
     margin-block: 0;
     padding-top: 2em;
+    font-weight: 100;
 }
 
