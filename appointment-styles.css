@@ -8,6 +8,9 @@ ul{
         grid-gap: 10px;
     }
 
+    .appointment{
+        width: 100%;
+    }
 
 }
 
@@ -18,12 +21,19 @@ ul{
         padding: 10px;
         grid-gap: 20px;
         grid-template-rows: 70px 70px 70px 70px 70px;
+
     }
 
     .day:hover{
-        background: #03886b9f;
+        background-color: #03886b9f;
         color: white;
         transition: all 0.3s ease;
+    }
+
+    .appointment{
+        width: 80%;
+        margin-left: 10%;
+        margin-right: 10%;
     }
     
 
@@ -58,9 +68,7 @@ ul{
     border-radius: 5%;
 }
 
-.appointment{
-    width: 100%;
-}
+
 
 
 

@@ -1,6 +1,5 @@
 *{
     font-family: 'Noto Sans KR', sans-serif;
-    color: white;
 }
 
 
@@ -84,6 +83,10 @@
     .workplace-book-now{
         background: #03886b9f;
         color: white;
+    }
+
+    .menu-item{
+        font-size: 12px;
     }
 }
 
@@ -252,3 +255,30 @@ a{
     font-weight: 100;
 }
 
+
+.table-title{
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.prices-menu{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+
+.menu-item-name{
+    text-align: left;
+}
+
+.menu-item-price{
+    text-align: right;
+}
+
+table{
+    /* color: #03886b; */
+    padding: 1%;
+    border: 1px solid #03886b;
+    border-radius: 10px;
+}
