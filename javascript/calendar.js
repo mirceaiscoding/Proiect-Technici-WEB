@@ -98,7 +98,7 @@ function showNextMonth(){
 
 // Show the previous month
 function showPreviousMonth(){
-    if (shownDate.getMonth() == currentDate.getMonth()){
+    if (shownDate.getMonth() == currentDate.getMonth() && shownDate.getFullYear() == currentDate.getFullYear()){
         console.log("Couldn't show the previous month!");
         return;
     }
