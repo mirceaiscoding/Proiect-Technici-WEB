@@ -6,6 +6,8 @@ ul{
 @media (max-width:768px){
     .days{
         grid-gap: 10px;
+        grid-template-rows: repeat(6, 30px);
+
     }
 
     .appointment{
@@ -20,14 +22,8 @@ ul{
     .days{
         padding: 10px;
         grid-gap: 20px;
-        grid-template-rows: 70px 70px 70px 70px 70px;
+        grid-template-rows: repeat(6, 70px);
 
-    }
-
-    .day:hover{
-        background-color: #03886b9f;
-        color: white;
-        transition: all 0.3s ease;
     }
 
     .appointment{
@@ -68,10 +64,24 @@ ul{
     border-radius: 5%;
 }
 
+.day:hover{
+    background-color: #03886b9f;
+    color: white;
+    transition: all 0.3s ease;
+}
 
 
+.day-weekend{
+    background-color: rgba(223, 223, 223, 0.281);
+    color: rgb(95, 95, 95);
+    text-align: center;
+    border-radius: 5%;
+}
 
 
-
-
+.day-weekend:hover{
+    background-color: #8803039f;
+    color: white;
+    transition: all 0.3s ease;
+}
 
