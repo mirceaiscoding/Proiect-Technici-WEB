@@ -95,6 +95,23 @@ function showNextMonth(){
 }
 
 
+
+// Show the previous month
+function showPreviousMonth(){
+    if (shownDate.getMonth() == currentDate.getMonth()){
+        console.log("Couldn't show the previous month!");
+        return;
+    }
+    shownDate.setMonth(shownDate.getMonth() - 1)
+    updateCalendar(shownDate);
+}
+
+
 var shownDate = new Date(currentDate);
 
 updateCalendar(shownDate);
+
+
+const leftArrow = document.getElementById("arrow-left");
+const rightArrow = document.getElementById("arrow-right");
+

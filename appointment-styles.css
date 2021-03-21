@@ -37,13 +37,22 @@ ul{
 
 
 
-.month {
+.appointment-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 2.5%;
     padding-bottom: 2.5%;
     background: #1abc9c;
     text-align: center;
     color: white;
     text-transform: uppercase;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.month{
+    font-size: 20px;
 }
 
 .days{
@@ -54,6 +63,8 @@ ul{
     padding-left: 5px;
     padding-right: 5px;
     border: 2.5px solid #1abc9c;
+    padding-top: 5px;
+
     
 }
 
@@ -62,6 +73,7 @@ ul{
     color: black;
     text-align: center;
     border-radius: 5%;
+
 }
 
 .day:hover{
@@ -85,3 +97,28 @@ ul{
     transition: all 0.3s ease;
 }
 
+
+.weekdays{
+    display: grid;
+    text-transform: uppercase;
+    grid-gap: 10px;
+    grid-template-columns: auto auto auto auto auto auto auto;
+    background-color: white;
+    padding: 5px;
+    border-left: 2.5px solid #1abc9c;
+    border-right: 2.5px solid #1abc9c;
+}
+
+.weekday{
+    color: black;
+    text-align: center;
+    font-size: 12px;
+}
+
+#arrow-left{
+    cursor: pointer;
+}
+
+#arrow-right{
+    cursor: pointer;
+}
