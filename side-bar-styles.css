@@ -28,7 +28,8 @@
         /* border: 1px solid white; */
         padding: 5%;
         font-size: small;
-        font-weight: 100;
+        font-weight: 300;
+        letter-spacing: 0.2px;
         flex: 1;
     }
     #side-bar-item-text-book{
