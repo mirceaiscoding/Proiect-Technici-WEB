@@ -17,6 +17,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="location-styles.css">
+    <script src="../javascript/location.js"></script>
+
     <title>The smile company</title>
 
 </head>
@@ -27,7 +30,7 @@
         <a class="side-bar-item" id="side-bar-home" href="../index.html"><img src="../icon/home_white_24dp.svg" alt="Home"><p class="side-bar-item-text">Home</p></a>
         <a class="side-bar-item" id="side-bar-contact" href="../contact.html"><img src="../icon/contact_phone_white_24dp.svg" alt="Contact"><p class="side-bar-item-text">Contact</p></a>
         <a class="side-bar-item" id="side-bar-team" href="../team.html"><img src="../icon/groups_white_24dp.svg" alt="Team"><p class="side-bar-item-text">Our team</p></a>
-        <a class="side-bar-item" id="side-bar-location" href="../location/location.html"><img src="../icon/place_white_24dp.svg" alt="Place"><p class="side-bar-item-text">Location</p></a>
+        <a class="side-bar-item" id="side-bar-location" href=""><img src="../icon/place_white_24dp.svg" alt="Place"><p class="side-bar-item-text">Location</p></a>
         <a class="side-bar-item" id="side-bar-photos" href="../photo-gallery/photos.html"><img src="../icon/photo_library_white_24dp.svg" alt="Photo"><p class="side-bar-item-text">Photos</p></a>
         <a class="side-bar-item" id="side-bar-reviews" href=""><img src="../icon/rate_review_white_24dp.svg" alt="Review"><p class="side-bar-item-text">Reviews</p></a>
         <a class="side-bar-item" id="side-bar-prices" href="../prices.html"><img src="../icon/sell_white_24dp.svg" alt="Price"><p class="side-bar-item-text">Prices</p></a>
@@ -42,23 +45,27 @@
         </header>
 
 
-        <h3 class="subtitle">Implants</h3>
+        <h3 class="subtitle">Our location</h3>
 
-        <div class="procedures-info">
+        <div class="location">
 
-            <!-- taken from a website -->
+            <ul class="location-info">
 
-            <p class="procedures-info-content">Dental implants represent the most modern and efficient solution for replacing 
-            lost teeth.</p>
-            
-            <p class="procedures-info-content">Whether you lose a tooth, several teeth or all teeth, implants and modern 
-            implantology techniques can perform miracles. Thus, patients no longer need to sacrifice natural teeth to anchor 
-            dental bridge work types, mobile dentures are no longer used, that creates a permanent discomfort, but instead can 
-            benefit from fixed denture, anchored on implants, that looks and feels the same as natural teeth.</p>
+                <li> Str. Nusestie </li>
+                <li> Nr. 67</li>
+                <li> Craiova </li>
+                <li> Romania </li>
 
-            <img class="procedures-photo" src="photos/implant.jpg" alt="Implant">
-            
+            </ul>
+
+            <div id="map"></div>
+
         </div>
+
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7dc21qvKgmVX3aOZ9hLahikl3IgxQigA&callback=initMap&libraries=&v=weekly"
+          async
+        ></script>
 
         <footer>
 
@@ -69,7 +76,3 @@
     </div>
 
 </body>
-
-
-
-

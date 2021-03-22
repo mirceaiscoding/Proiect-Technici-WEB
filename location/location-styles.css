@@ -1,0 +1,19 @@
+#map {
+    height: 300px;
+    width: 100%;
+}
+
+.location-info{
+    list-style: none;
+    background-color: #37c5a6;
+    padding: 20px;
+    color: #f7f6f4;
+}
+
+.location{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: center;
+    width: 100%;
+}
