@@ -47,7 +47,41 @@ function addDays(year, month){
             li.setAttribute("class", "day");
         }
     }
+}
 
+
+// Adds the days of the month (when the shown month is the current month)
+function addDaysCurrentMonth(year, month, day){
+    const numberOfDays = getDaysInMonth(year, month);
+    const daysElement = document.getElementById("days");
+    for (let index = 1; index <= numberOfDays; index++){
+
+        const currentDate = new Date(year, month, index);
+        const currenntWeekday = currentDate.getDay();
+
+        let li = document.createElement("li");
+        li.setAttribute("id", "day-" + index.toString());
+        li.innerText = index.toString();
+        daysElement.appendChild(li);
+
+        if (currenntWeekday == 0 || currenntWeekday == 6){
+            li.setAttribute("class", "day-weekend");
+            continue;
+        }
+
+        if (index < day){
+            li.setAttribute("class", "day-before-current-date");
+            continue;
+        }
+
+        if (index == day){
+            li.setAttribute("class", "day-current-date");
+            continue;
+        }
+
+        li.setAttribute("class", "day");
+
+    }
 }
 
 
@@ -58,14 +92,23 @@ function updateCalendar(date){
     const daysElement = document.getElementById("days");
     daysElement.innerHTML = "";
 
+    // Year
+    const year = date.getFullYear();
+    console.log("Year is " + year);
+
     // Month name
     const month = date.getMonth();
     const monthName = months[month];
     console.log("Month is " + monthName);
 
-    // Year
-    const year = date.getFullYear();
-    console.log("Year is " + year);
+    // Day
+    const day = date.getDate();
+    console.log("Current day is " + day);
+
+    // Show the current month and year
+    const monthElement = document.getElementById("month");
+    monthElement.innerHTML= monthName + " " + year;
+    console.log(monthElement);
 
     // First day of the month
     const firstDay = new Date(year, month, 1);
@@ -79,12 +122,11 @@ function updateCalendar(date){
     console.log("Added " + (weekdayFirstDay + 6) % 7 + " blank days");
 
     // Add the days of the month in the calendar
-    addDays(year, month);
-
-    // Show the current month and year
-    const monthElement = document.getElementById("month");
-    monthElement.innerHTML= monthName + " " + year;
-    console.log(monthElement);
+    if (shownDate.getMonth() == currentDate.getMonth() && shownDate.getFullYear() == currentDate.getFullYear()){
+        addDaysCurrentMonth(year, month, day);
+    }else{
+        addDays(year, month);
+    }
 }
 
 

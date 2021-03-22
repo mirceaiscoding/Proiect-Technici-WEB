@@ -75,28 +75,39 @@ ul{
     color: black;
     text-align: center;
     border-radius: 5%;
+    cursor: pointer;
 
 }
 
-.day:hover{
+.day:hover, .day:active{
     background-color: #03886b9f;
     color: white;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
+}
+
+.day-current-date{
+    background-color: #03886b9f;
+    color: white;
+    border-radius: 5%;
+    text-align: center;
+    cursor: pointer;
+
 }
 
 
-.day-weekend{
+.day-weekend, .day-before-current-date{
     background-color: rgba(0, 0, 0, 0.144);
     color: white;
     text-align: center;
     border-radius: 5%;
+    cursor: pointer;
 }
 
 
-.day-weekend:hover{
+.day-weekend:hover, .day-weekend:active, .day-before-current-date:hover, .day-before-current-date:active{
     background-color: #8803039f;
     color: white;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
 }
 
 
