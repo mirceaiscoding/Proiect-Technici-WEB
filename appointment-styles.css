@@ -66,6 +66,9 @@ ul{
     border-right: 2.5px solid #1abc9c;
     border-bottom: 2.5px solid #1abc9c;
     padding-top: 5px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+
 
     
 }
@@ -120,6 +123,7 @@ ul{
     padding: 5px;
     border-left: 2.5px solid #1abc9c;
     border-right: 2.5px solid #1abc9c;
+    
 }
 
 .weekday{
@@ -134,4 +138,30 @@ ul{
 
 #arrow-right{
     cursor: pointer;
+}
+
+.day-planner{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    border: 2.5px solid #1abc9c;
+    border-radius: 10px;
+
+}
+
+.day-planner-hour{
+    display: flex;
+    transition: all 0.5s ease;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: rgba(223, 223, 223, 0.281);
+    color: black;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.day-planner-hour:hover{
+    background-color: #03886b9f;
+    color: white;
+    transition: all 0.5s ease;
 }

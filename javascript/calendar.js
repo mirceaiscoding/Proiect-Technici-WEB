@@ -3,6 +3,10 @@ const currentDate = new Date();
 console.log(currentDate);
 
 
+// Working hours
+const startWorkingDay = 9;
+const endWorkingDay = 7;
+
 // Array for months name
 const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
@@ -27,6 +31,13 @@ function getDaysInMonth(year, month) {
 }
 
 
+// Shows hour intervals for a specific day
+function showDayAvailaility(year, month, index){
+
+}
+
+
+
 // Adds the days of the month
 function addDays(year, month){
     const numberOfDays = getDaysInMonth(year, month);
@@ -45,10 +56,13 @@ function addDays(year, month){
             li.setAttribute("class", "day-weekend");
         }else{
             li.setAttribute("class", "day");
+            li.onclick = function(){
+                console.log("clicked " + index + " " + months[month] + " "+ year);
+                showDayAvailaility(year, month, index);
+            };
         }
     }
 }
-
 
 // Adds the days of the month (when the shown month is the current month)
 function addDaysCurrentMonth(year, month, day){
@@ -73,6 +87,12 @@ function addDaysCurrentMonth(year, month, day){
             li.setAttribute("class", "day-before-current-date");
             continue;
         }
+
+        // The rest of the days are clickable
+        li.onclick = function(){
+            console.log("clicked " + index + " " + months[month] + " "+ year);
+            showDayAvailaility(year, month, index);
+        };
 
         if (index == day){
             li.setAttribute("class", "day-current-date");

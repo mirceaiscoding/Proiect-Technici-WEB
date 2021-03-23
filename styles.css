@@ -159,7 +159,7 @@
 
     .circle:hover{
         background-color: #03886b;
-        transition: backgroung-color 1s ease;
+        transition: background-color 1s ease;
     
     }
 
@@ -233,6 +233,7 @@ a{
 
 
 .circle {
+    transition: background-color 1s ease;
     color:ghostwhite;
     background-color: #37c5a6;
     line-height:100px;
