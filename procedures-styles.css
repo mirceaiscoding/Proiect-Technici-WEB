@@ -1,10 +1,10 @@
-@media (max-width:768px){
-    .procedures-photo{
+@media (max-width:768px) {
+    .procedures-photo {
         width: 100%;
         height: auto;
     }
 
-    .procedures-info{
+    .procedures-info {
         width: 100%;
         background-color: rgba(223, 223, 223, 0.281);
     }
@@ -12,36 +12,36 @@
 }
 
 
-@media (min-width:768px){
-    .procedures-photo{
+@media (min-width:768px) {
+    .procedures-photo {
         display: block;
         margin-left: auto;
         margin-right: auto;
-        width: 60%;   
+        width: 60%;
     }
 
-    .procedures-info-content{
+    .procedures-info-content {
         margin-right: 10%;
-        width: 90%;  
+        width: 90%;
     }
 
-    .procedures-info{
+    .procedures-info {
         background-color: rgba(223, 223, 223, 0.281);
     }
 
 }
 
-.procedures-photo{
+.procedures-photo {
     margin-top: 10px;
 }
 
-.procedures-info-content{
-    color:#797676;
+.procedures-info-content {
+    color: #797676;
     margin-left: 5%;
     margin-right: 5%;
 }
 
-.procedures-menu{
+.procedures-menu {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;

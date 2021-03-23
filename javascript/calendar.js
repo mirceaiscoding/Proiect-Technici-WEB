@@ -8,16 +8,37 @@ const startWorkingDay = 9;
 const endWorkingDay = 7;
 
 // Array for months name
-const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+];
 
 // Array for weekday names
-const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const days = [
+    "Sun",
+    "Mon",
+    "Tue",
+    "Wed",
+    "Thu",
+    "Fri",
+    "Sat"
+];
 
 
 // Adds blank days so that saturday and sunday are on the 6th and 7th collum
-function addBlankDays(numberOfDays){
+function addBlankDays(numberOfDays) {
     const daysElement = document.getElementById("days");
-    for (let index = 1; index <= numberOfDays; index++){
+    for (let index = 1; index <= numberOfDays; index++) {
         let li = document.createElement("li");
         li.setAttribute("class", "blank-day");
         daysElement.appendChild(li);
@@ -32,17 +53,14 @@ function getDaysInMonth(year, month) {
 
 
 // Shows hour intervals for a specific day
-function showDayAvailaility(year, month, index){
-
-}
-
+function showDayAvailaility(year, month, index) {}
 
 
 // Adds the days of the month
-function addDays(year, month){
+function addDays(year, month) {
     const numberOfDays = getDaysInMonth(year, month);
     const daysElement = document.getElementById("days");
-    for (let index = 1; index <= numberOfDays; index++){
+    for (let index = 1; index <= numberOfDays; index++) {
 
         const currentDate = new Date(year, month, index);
         const currenntWeekday = currentDate.getDay();
@@ -52,12 +70,12 @@ function addDays(year, month){
         li.innerText = index.toString();
         daysElement.appendChild(li);
 
-        if (currenntWeekday == 0 || currenntWeekday == 6){
+        if (currenntWeekday == 0 || currenntWeekday == 6) {
             li.setAttribute("class", "day-weekend");
-        }else{
+        } else {
             li.setAttribute("class", "day");
-            li.onclick = function(){
-                console.log("clicked " + index + " " + months[month] + " "+ year);
+            li.onclick = function () {
+                console.log("clicked " + index + " " + months[month] + " " + year);
                 showDayAvailaility(year, month, index);
             };
         }
@@ -65,10 +83,10 @@ function addDays(year, month){
 }
 
 // Adds the days of the month (when the shown month is the current month)
-function addDaysCurrentMonth(year, month, day){
+function addDaysCurrentMonth(year, month, day) {
     const numberOfDays = getDaysInMonth(year, month);
     const daysElement = document.getElementById("days");
-    for (let index = 1; index <= numberOfDays; index++){
+    for (let index = 1; index <= numberOfDays; index++) {
 
         const currentDate = new Date(year, month, index);
         const currenntWeekday = currentDate.getDay();
@@ -78,23 +96,23 @@ function addDaysCurrentMonth(year, month, day){
         li.innerText = index.toString();
         daysElement.appendChild(li);
 
-        if (currenntWeekday == 0 || currenntWeekday == 6){
+        if (currenntWeekday == 0 || currenntWeekday == 6) {
             li.setAttribute("class", "day-weekend");
             continue;
         }
 
-        if (index < day){
+        if (index < day) {
             li.setAttribute("class", "day-before-current-date");
             continue;
         }
 
         // The rest of the days are clickable
-        li.onclick = function(){
-            console.log("clicked " + index + " " + months[month] + " "+ year);
+        li.onclick = function () {
+            console.log("clicked " + index + " " + months[month] + " " + year);
             showDayAvailaility(year, month, index);
         };
 
-        if (index == day){
+        if (index == day) {
             li.setAttribute("class", "day-current-date");
             continue;
         }
@@ -106,9 +124,7 @@ function addDaysCurrentMonth(year, month, day){
 
 
 // Update the shown date
-function updateCalendar(date){
-
-    // Clear the calendar
+function updateCalendar(date) { // Clear the calendar
     const daysElement = document.getElementById("days");
     daysElement.innerHTML = "";
 
@@ -127,7 +143,7 @@ function updateCalendar(date){
 
     // Show the current month and year
     const monthElement = document.getElementById("month");
-    monthElement.innerHTML= monthName + " " + year;
+    monthElement.innerHTML = monthName + " " + year;
     console.log(monthElement);
 
     // First day of the month
@@ -139,28 +155,29 @@ function updateCalendar(date){
 
     // Insert blank days so that the weekdays align
     addBlankDays((weekdayFirstDay + 6) % 7);
-    console.log("Added " + (weekdayFirstDay + 6) % 7 + " blank days");
+    console.log("Added " + (
+        weekdayFirstDay + 6
+    ) % 7 + " blank days");
 
     // Add the days of the month in the calendar
-    if (shownDate.getMonth() == currentDate.getMonth() && shownDate.getFullYear() == currentDate.getFullYear()){
+    if (shownDate.getMonth() == currentDate.getMonth() && shownDate.getFullYear() == currentDate.getFullYear()) {
         addDaysCurrentMonth(year, month, day);
-    }else{
+    } else {
         addDays(year, month);
     }
 }
 
 
 // Show the next month
-function showNextMonth(){
+function showNextMonth() {
     shownDate.setMonth(shownDate.getMonth() + 1)
     updateCalendar(shownDate);
 }
 
 
-
 // Show the previous month
-function showPreviousMonth(){
-    if (shownDate.getMonth() == currentDate.getMonth() && shownDate.getFullYear() == currentDate.getFullYear()){
+function showPreviousMonth() {
+    if (shownDate.getMonth() == currentDate.getMonth() && shownDate.getFullYear() == currentDate.getFullYear()) {
         console.log("Couldn't show the previous month!");
         return;
     }
@@ -176,4 +193,3 @@ updateCalendar(shownDate);
 
 const leftArrow = document.getElementById("arrow-left");
 const rightArrow = document.getElementById("arrow-right");
-

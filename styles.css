@@ -1,35 +1,43 @@
-*{
+* {
     font-family: 'Noto Sans KR', sans-serif;
 }
 
 
 
-@media (max-width:768px){
-    p{
+@media (max-width:768px) {
+    p {
         font-size: 14px;
     }
-    #photo0{
+
+    #photo0 {
         display: none;
     }
-    #photo2{
+
+    #photo2 {
         display: none;
     }
-    #photo4{
+
+    #photo4 {
         display: none;
     }
-    #photo2{
+
+    #photo2 {
         display: none;
     }
-    #photo6{
+
+    #photo6 {
         display: none;
     }
-    #photo7{
+
+    #photo7 {
         display: none;
     }
-    #photo8{
+
+    #photo8 {
         display: none;
     }
-    .view-more-photos{
+
+    .view-more-photos {
         display: block;
         color: rgb(149 179 205);
         text-align: center;
@@ -41,7 +49,7 @@
         margin-block: 0;
     }
 
-    .photo-gallery{
+    .photo-gallery {
         display: grid;
         grid-template-columns: 1fr;
         grid-gap: 10px;
@@ -49,19 +57,19 @@
         background-color: rgba(223, 223, 223, 0.281);
     }
 
-    .photo-gallery-element{
+    .photo-gallery-element {
         border: 1px solid #ccc;
         width: 100%;
     }
 
-    .team-gallery{
+    .team-gallery {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         width: 100%;
     }
 
-    .team-member{
+    .team-member {
         width: 50%;
         height: 30%;
         align-content: center;
@@ -70,35 +78,37 @@
         padding-top: 5px;
     }
 
-    .team-member-photo{
+    .team-member-photo {
         width: 50%;
     }
 
-    .workplace-book-now{
+    .workplace-book-now {
         font-size: 10px;
         padding-bottom: 2.5em;
-        padding-top: 1em;;
+        padding-top: 1em;
+        ;
     }
 
-    .workplace-book-now{
+    .workplace-book-now {
         background: #03886b9f;
         color: white;
     }
 
-    .menu-item{
+    .menu-item {
         font-size: 12px;
     }
 }
 
-@media (min-width:768px){
-    p{
+@media (min-width:768px) {
+    p {
         font-size: 16px;
     }
-    .view-more-photos{
+
+    .view-more-photos {
         display: none;
     }
 
-    .photo-gallery{
+    .photo-gallery {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 20px;
@@ -106,83 +116,83 @@
         background-color: rgba(223, 223, 223, 0.281);
     }
 
-    .photo-gallery-element{
+    .photo-gallery-element {
         border: 1px solid #ccc;
-        box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.3);
+        box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
         width: 100%;
     }
 
-    .photo-gallery-element:hover{
+    .photo-gallery-element:hover {
         transition: all 1s ease;
         opacity: 0.8;
     }
 
-    .team-gallery{
+    .team-gallery {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         width: 100%;
     }
 
-    .team-member{
+    .team-member {
         width: 20%;
         height: 40%;
         align-content: center;
         text-align: center;
     }
 
-    .team-member-photo{
+    .team-member-photo {
         width: 50%;
     }
 
-    .workplace-book-now{
+    .workplace-book-now {
         padding-bottom: 2.5em;
         padding-top: 1em;
     }
 
-    .workplace-book-now{
+    .workplace-book-now {
         color: black;
         background: #05050542;
     }
-    
-    
-    .workplace-book-now:hover{
+
+
+    .workplace-book-now:hover {
         transition: background-color 1.2s ease;
         background: #03886b9f;
         color: white;
     }
 
-    .circle{
+    .circle {
         transition: backgroung-color 1s ease;
 
     }
 
-    .circle:hover{
+    .circle:hover {
         background-color: #03886b;
         transition: background-color 1s ease;
-    
+
     }
 
 }
 
-.team-member-name{
+.team-member-name {
     color: #0a672b;
 }
 
-.team-member-job{
+.team-member-job {
     color: #d34400;
 }
 
-h3{
+h3 {
     margin-top: 0;
 }
 
 
-a{
+a {
     text-decoration: none;
 }
 
-.workplace{
+.workplace {
     position: relative;
     text-align: center;
     background: rgb(255, 255, 255);
@@ -190,12 +200,12 @@ a{
     width: 100%;
 }
 
-.workplace-photo{
+.workplace-photo {
     width: 75%;
     opacity: 0.7;
 }
 
-.workplace-book-now{
+.workplace-book-now {
     position: absolute;
     top: 40%;
     bottom: 60%;
@@ -208,21 +218,21 @@ a{
 
 
 
-.about-us{
+.about-us {
     width: 100%;
     background-color: rgba(223, 223, 223, 0.281);
     padding-bottom: 10px;
 
 }
 
-.about-us-content{
-    color:#797676;
+.about-us-content {
+    color: #797676;
     margin-left: 5%;
     margin-right: 5%;
 
 }
 
-.subtitle{
+.subtitle {
     font-family: 'Roboto Mono', monospace;
     color: #03886b;
     text-align: center;
@@ -234,9 +244,9 @@ a{
 
 .circle {
     transition: background-color 1s ease;
-    color:ghostwhite;
+    color: ghostwhite;
     background-color: #37c5a6;
-    line-height:100px;
+    line-height: 100px;
     text-decoration: none;
     display: block;
     width: 100px;
@@ -249,7 +259,7 @@ a{
 
 
 
-.footer-text{
+.footer-text {
     color: black;
     text-align: center;
     margin-block: 0;
@@ -258,27 +268,27 @@ a{
 }
 
 
-.table-title{
+.table-title {
     text-align: center;
     margin-bottom: 5px;
 }
 
-.prices-menu{
+.prices-menu {
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
 }
 
 
-.menu-item-name{
+.menu-item-name {
     text-align: left;
 }
 
-.menu-item-price{
+.menu-item-price {
     text-align: right;
 }
 
-table{
+table {
     /* color: #03886b; */
     padding: 1%;
     border: 1px solid #03886b;

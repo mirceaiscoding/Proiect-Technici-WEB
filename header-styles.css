@@ -1,19 +1,19 @@
-@media (max-width: 768px){
-    .header-logo{
+@media (max-width: 768px) {
+    .header-logo {
         height: 8em;
     }
 }
 
 
-@media (min-width: 768px){
-    .header-logo{
+@media (min-width: 768px) {
+    .header-logo {
         height: 10em;
     }
 }
 
 
 
-.header{
+.header {
     background-color: white;
     display: flex;
     flex-wrap: wrap;

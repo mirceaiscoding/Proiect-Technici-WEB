@@ -1,9 +1,10 @@
-@media (max-width: 990px){
-    .side-bar-item{
+@media (max-width: 990px) {
+    .side-bar-item {
         color: white;
         border: 1px solid white;
     }
-    .side-bar{
+
+    .side-bar {
         width: 100%;
         display: flex;
         flex-direction: row;
@@ -15,16 +16,20 @@
         flex-wrap: wrap;
         border: 1px ridge;
     }
-    #side-bar-team{
+
+    #side-bar-team {
         display: none;
     }
-    #side-bar-photos{
+
+    #side-bar-photos {
         display: none;
     }
-    #side-bar-prices{
+
+    #side-bar-prices {
         display: none;
     }
-    .side-bar-item{
+
+    .side-bar-item {
         /* border: 1px solid white; */
         padding: 5%;
         font-size: small;
@@ -32,21 +37,24 @@
         letter-spacing: 0.2px;
         flex: 1;
     }
-    #side-bar-item-text-book{
+
+    #side-bar-item-text-book {
         display: inline;
     }
 }
 
 
-@media (min-width: 990px){
-    .side-bar-item{
+@media (min-width: 990px) {
+    .side-bar-item {
         color: white;
     }
-    .side-bar-item:hover{
+
+    .side-bar-item:hover {
         transition: background-color 0.8s ease;
         background-color: #03886b;
     }
-    .side-bar{
+
+    .side-bar {
         height: 100%;
         width: 15%;
         position: fixed;
@@ -61,11 +69,13 @@
         left: 0;
         flex-wrap: wrap;
     }
-    .next-to-side-bar{
+
+    .next-to-side-bar {
         padding-left: 15%;
         overflow: hidden;
     }
-    .side-bar-item{
+
+    .side-bar-item {
         /* border: 1px solid white; */
         padding: 5%;
         border-spacing: 5px;
@@ -73,11 +83,8 @@
         font-weight: 300;
         flex: 1;
     }
-    .side-bar-item-text{
+
+    .side-bar-item-text {
         display: inline;
     }
 }
-
-
-
-

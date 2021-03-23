@@ -1,37 +1,37 @@
-ul{
+ul {
     list-style-type: none;
 }
 
 
-@media (max-width:768px){
-    .days{
+@media (max-width:768px) {
+    .days {
         grid-gap: 10px;
         grid-template-rows: repeat(6, 30px);
 
     }
 
-    .appointment{
+    .appointment {
         width: 100%;
     }
 
 }
 
 
-@media (min-width:768px){
+@media (min-width:768px) {
 
-    .days{
+    .days {
         padding: 10px;
         grid-gap: 20px;
         grid-template-rows: repeat(6, 70px);
 
     }
 
-    .appointment{
+    .appointment {
         width: 80%;
         margin-left: 10%;
         margin-right: 10%;
     }
-    
+
 
 }
 
@@ -51,11 +51,11 @@ ul{
     padding-right: 10px;
 }
 
-.month{
+.month {
     font-size: 20px;
 }
 
-.days{
+.days {
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto;
     background-color: white;
@@ -70,10 +70,10 @@ ul{
     border-bottom-right-radius: 10px;
 
 
-    
+
 }
 
-.day{
+.day {
     background-color: rgba(223, 223, 223, 0.281);
     color: black;
     text-align: center;
@@ -82,13 +82,14 @@ ul{
 
 }
 
-.day:hover, .day:active{
+.day:hover,
+.day:active {
     background-color: #03886b9f;
     color: white;
     transition: all 0.5s ease;
 }
 
-.day-current-date{
+.day-current-date {
     background-color: #03886b9f;
     color: white;
     border-radius: 5%;
@@ -98,7 +99,8 @@ ul{
 }
 
 
-.day-weekend, .day-before-current-date{
+.day-weekend,
+.day-before-current-date {
     background-color: rgba(0, 0, 0, 0.144);
     color: white;
     text-align: center;
@@ -107,14 +109,17 @@ ul{
 }
 
 
-.day-weekend:hover, .day-weekend:active, .day-before-current-date:hover, .day-before-current-date:active{
+.day-weekend:hover,
+.day-weekend:active,
+.day-before-current-date:hover,
+.day-before-current-date:active {
     background-color: #8803039f;
     color: white;
     transition: all 0.5s ease;
 }
 
 
-.weekdays{
+.weekdays {
     display: grid;
     text-transform: uppercase;
     grid-gap: 10px;
@@ -123,24 +128,24 @@ ul{
     padding: 5px;
     border-left: 2.5px solid #1abc9c;
     border-right: 2.5px solid #1abc9c;
-    
+
 }
 
-.weekday{
+.weekday {
     color: black;
     text-align: center;
     font-size: 12px;
 }
 
-#arrow-left{
+#arrow-left {
     cursor: pointer;
 }
 
-#arrow-right{
+#arrow-right {
     cursor: pointer;
 }
 
-.day-planner{
+.day-planner {
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -149,7 +154,7 @@ ul{
 
 }
 
-.day-planner-hour{
+.day-planner-hour {
     display: flex;
     transition: all 0.5s ease;
     justify-content: space-between;
@@ -160,7 +165,7 @@ ul{
     cursor: pointer;
 }
 
-.day-planner-hour:hover{
+.day-planner-hour:hover {
     background-color: #03886b9f;
     color: white;
     transition: all 0.5s ease;
