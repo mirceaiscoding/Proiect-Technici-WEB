@@ -5,7 +5,7 @@ console.log(currentDate);
 
 // Working hours
 const startWorkingDay = 9;
-const endWorkingDay = 7;
+const endWorkingDay = 17;
 
 // Array for months name
 const months = [
@@ -52,8 +52,58 @@ function getDaysInMonth(year, month) {
 }
 
 
+// Hour format from number
+function toHour(number){
+    let sol = "";
+    if (number < 10){
+        sol += 0;
+    }
+    sol += number + ":00";
+    return sol
+}
+
+
 // Shows hour intervals for a specific day
-function showDayAvailaility(year, month, index) {}
+function showDayAvailability(year, month, index) {
+    console.log("Show day availability")
+
+    // Clear day planner
+    const dayPlanner = document.getElementById("day-planner");
+    dayPlanner.innerHTML = "";
+
+    // Add title for day planner
+    let title = document.createElement("li");
+    title.setAttribute("class", "day-planner-title")
+    title.innerText = "Make an appointment for " + index + "/" + (month + 1) + "/" + year;
+    dayPlanner.appendChild(title);
+
+
+    for (let currentStartHour = startWorkingDay; currentStartHour < endWorkingDay; currentStartHour++) {
+
+        console.log("Creating hour " + currentStartHour)
+        let li = document.createElement("li");
+        li.setAttribute("class", "day-planner-hour");
+
+        let divStartHour = document.createElement("div");
+        divStartHour.setAttribute("class", "day-planner-start-hour");
+        divStartHour.innerText = toHour(currentStartHour);
+        li.appendChild(divStartHour);
+
+        let divBreak = document.createElement("div");
+        divBreak.setAttribute("class", "day-planner-break");
+        divBreak.innerText = "-";
+        li.appendChild(divBreak);
+
+        let divEndHour = document.createElement("div");
+        divEndHour.setAttribute("class", "day-planner-end-hour");
+        divEndHour.innerText = toHour(currentStartHour + 1);
+        li.appendChild(divEndHour);
+
+        dayPlanner.appendChild(li);
+    }
+    dayPlanner.style.display = "flex";
+
+}
 
 
 // Adds the days of the month
@@ -76,7 +126,7 @@ function addDays(year, month) {
             li.setAttribute("class", "day");
             li.onclick = function () {
                 console.log("clicked " + index + " " + months[month] + " " + year);
-                showDayAvailaility(year, month, index);
+                showDayAvailability(year, month, index);
             };
         }
     }
@@ -109,7 +159,7 @@ function addDaysCurrentMonth(year, month, day) {
         // The rest of the days are clickable
         li.onclick = function () {
             console.log("clicked " + index + " " + months[month] + " " + year);
-            showDayAvailaility(year, month, index);
+            showDayAvailability(year, month, index);
         };
 
         if (index == day) {
@@ -123,10 +173,22 @@ function addDaysCurrentMonth(year, month, day) {
 }
 
 
+// Hide day planner
+function hideDayPlanner(){
+    const dayPlanner = document.getElementById("day-planner");
+    dayPlanner.style.display = "none";
+}
+
+
 // Update the shown date
-function updateCalendar(date) { // Clear the calendar
+function updateCalendar(date) {
+
+    // Clear the calendar
     const daysElement = document.getElementById("days");
     daysElement.innerHTML = "";
+
+    // Hide day planner
+    hideDayPlanner();
 
     // Year
     const year = date.getFullYear();
@@ -189,7 +251,6 @@ function showPreviousMonth() {
 var shownDate = new Date(currentDate);
 
 updateCalendar(shownDate);
-
 
 const leftArrow = document.getElementById("arrow-left");
 const rightArrow = document.getElementById("arrow-right");
