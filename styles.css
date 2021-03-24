@@ -97,6 +97,13 @@
     .menu-item {
         font-size: 12px;
     }
+
+    .circle{
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 14px;
+    }
 }
 
 @media (min-width:768px) {
@@ -164,7 +171,9 @@
 
     .circle {
         transition: backgroung-color 1s ease;
-
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
     }
 
     .circle:hover {
@@ -246,11 +255,8 @@ a {
     transition: background-color 1s ease;
     color: ghostwhite;
     background-color: #37c5a6;
-    line-height: 100px;
     text-decoration: none;
     display: block;
-    width: 100px;
-    height: 100px;
     border-radius: 50%;
     text-align: center;
     margin-bottom: 10px;
