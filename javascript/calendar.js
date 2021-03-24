@@ -63,25 +63,11 @@ function toHour(number) {
 }
 
 
-// Hide day planner
-function hideDayPlanner() {
-    const dayPlanner = document.getElementById("day-planner");
-    dayPlanner.style.opacity = 0;
-    dayPlanner.style.height = 0;
-}
 
-// Show day planner
-function showDayPlanner() {
-    const dayPlanner = document.getElementById("day-planner");
-    dayPlanner.style.opacity = 1;
-    dayPlanner.style.height = "auto";
-}
-
-
-function changeActiveDay(index){
+function changeActiveDay(index) {
     console.log("Changing active day to " + index);
     const activeDay = document.getElementsByClassName("active");
-    if (activeDay.length != 0){
+    if (activeDay.length != 0) {
         activeDay[0].setAttribute("class", "day");
     }
     const newActiveDay = document.getElementById(("day-" + index));
@@ -105,10 +91,9 @@ function showDayAvailability(year, month, index) {
     title.innerText = "Make an appointment for " + index + "/" + (month + 1) + "/" + year;
     dayPlanner.appendChild(title);
 
-
+    // Add hour intervalls
     for (let currentStartHour = startWorkingDay; currentStartHour < endWorkingDay; currentStartHour++) {
 
-        console.log("Creating hour " + currentStartHour)
         let li = document.createElement("li");
         li.setAttribute("class", "day-planner-hour");
 
@@ -129,10 +114,14 @@ function showDayAvailability(year, month, index) {
 
         dayPlanner.appendChild(li);
     }
-    showDayPlanner();
 
 }
 
+
+function hideDayPlanner(){
+    const dayPlanner = document.getElementById("day-planner");
+    dayPlanner.style.maxHeight = null;
+}
 
 // Adds the days of the month
 function addDays(year, month) {
@@ -154,7 +143,22 @@ function addDays(year, month) {
             li.setAttribute("class", "day");
             li.onclick = function () {
                 console.log("clicked " + index + " " + months[month] + " " + year);
+                const dayPlanner = document.getElementById("day-planner");
+    
+                // Hide the day planner if the same day is selected twice
+                if(li.classList.contains("active")){
+                    if (dayPlanner.style.maxHeight){
+                        hideDayPlanner();
+                        return;
+                    }
+                }
+    
+                // Create the elements inside the day planner
                 showDayAvailability(year, month, index);
+                if (!dayPlanner.style.maxHeight) {
+                    // Show the day planner
+                    dayPlanner.style.maxHeight = dayPlanner.scrollHeight + "px";
+                }
             };
         }
     }
@@ -187,7 +191,22 @@ function addDaysCurrentMonth(year, month, day) {
         // The rest of the days are clickable
         li.onclick = function () {
             console.log("clicked " + index + " " + months[month] + " " + year);
+            const dayPlanner = document.getElementById("day-planner");
+
+            // Hide the day planner if the same day is selected twice
+            if(li.classList.contains("active")){
+                if (dayPlanner.style.maxHeight){
+                    hideDayPlanner();
+                    return;
+                }
+            }
+
+            // Create the elements inside the day planner
             showDayAvailability(year, month, index);
+            if (!dayPlanner.style.maxHeight) {
+                // Show the day planner
+                dayPlanner.style.maxHeight = dayPlanner.scrollHeight + "px";
+            }
         };
 
         if (index == day) {
@@ -209,7 +228,7 @@ function updateCalendar(date) {
     const daysElement = document.getElementById("days");
     daysElement.innerHTML = "";
 
-    // Hide day planner
+    // Hide the day planner
     hideDayPlanner();
 
     // Year
