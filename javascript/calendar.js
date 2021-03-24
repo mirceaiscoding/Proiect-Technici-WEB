@@ -77,9 +77,23 @@ function showDayPlanner() {
     dayPlanner.style.height = "auto";
 }
 
+
+function changeActiveDay(index){
+    console.log("Changing active day to " + index);
+    const activeDay = document.getElementsByClassName("active");
+    if (activeDay.length != 0){
+        activeDay[0].setAttribute("class", "day");
+    }
+    const newActiveDay = document.getElementById(("day-" + index));
+    newActiveDay.className += " active";
+}
+
 // Shows hour intervals for a specific day
 function showDayAvailability(year, month, index) {
     console.log("Show day availability")
+
+    // Change the active day
+    changeActiveDay(index);
 
     // Clear day planner
     const dayPlanner = document.getElementById("day-planner");
@@ -177,7 +191,7 @@ function addDaysCurrentMonth(year, month, day) {
         };
 
         if (index == day) {
-            li.setAttribute("class", "day-current-date");
+            li.setAttribute("class", "day active");
             continue;
         }
 
