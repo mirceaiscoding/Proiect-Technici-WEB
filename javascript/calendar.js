@@ -53,15 +53,29 @@ function getDaysInMonth(year, month) {
 
 
 // Hour format from number
-function toHour(number){
+function toHour(number) {
     let sol = "";
-    if (number < 10){
+    if (number < 10) {
         sol += 0;
     }
     sol += number + ":00";
     return sol
 }
 
+
+// Hide day planner
+function hideDayPlanner() {
+    const dayPlanner = document.getElementById("day-planner");
+    dayPlanner.style.opacity = 0;
+    dayPlanner.style.height = 0;
+}
+
+// Show day planner
+function showDayPlanner() {
+    const dayPlanner = document.getElementById("day-planner");
+    dayPlanner.style.opacity = 1;
+    dayPlanner.style.height = "auto";
+}
 
 // Shows hour intervals for a specific day
 function showDayAvailability(year, month, index) {
@@ -101,7 +115,7 @@ function showDayAvailability(year, month, index) {
 
         dayPlanner.appendChild(li);
     }
-    dayPlanner.style.display = "flex";
+    showDayPlanner();
 
 }
 
@@ -173,12 +187,6 @@ function addDaysCurrentMonth(year, month, day) {
 }
 
 
-// Hide day planner
-function hideDayPlanner(){
-    const dayPlanner = document.getElementById("day-planner");
-    dayPlanner.style.display = "none";
-}
-
 
 // Update the shown date
 function updateCalendar(date) {
@@ -217,9 +225,7 @@ function updateCalendar(date) {
 
     // Insert blank days so that the weekdays align
     addBlankDays((weekdayFirstDay + 6) % 7);
-    console.log("Added " + (
-        weekdayFirstDay + 6
-    ) % 7 + " blank days");
+    console.log("Added " + (weekdayFirstDay + 6) % 7 + " blank days");
 
     // Add the days of the month in the calendar
     if (shownDate.getMonth() == currentDate.getMonth() && shownDate.getFullYear() == currentDate.getFullYear()) {

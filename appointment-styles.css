@@ -150,16 +150,16 @@ ul {
 
 .day-planner {
     padding: 0;
-    display: none;
+    transition: opacity 1s ease-out;
+    transition-timing-function: linear;
     flex-direction: column;
-    border: 2.5px solid #1abc9c;
+    /* border: 2.5px solid #1abc9c; */
     border-radius: 10px;
-
 }
 
 .day-planner-hour {
     display: flex;
-    transition: all 0.5s ease;
+    transition: background-color 0.5s ease;
     justify-content: space-between;
     flex-direction: row;
     background-color: rgba(223, 223, 223, 0.281);
@@ -171,14 +171,13 @@ ul {
 .day-planner-hour:hover {
     background-color: #03886b9f;
     color: white;
-    transition: all 0.5s ease;
+    transition: background-color 0.5s ease;
 }
 
 .day-planner-title{
     background-color: rgba(223, 223, 223, 0.281);
     color: black;
     padding: 10px;
-    width: 100%;
     text-align: center;
     text-transform: uppercase;
 }
