@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="side-bar-styles.css">
     <link rel="stylesheet" href="procedures-styles.css">
     <link rel="stylesheet" href="appointment-styles.css">
+    <link rel="stylesheet" href="contact-form-styles.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&display=swap" rel="stylesheet">
@@ -63,6 +64,57 @@
         </header>
 
         <h3 class="subtitle">Contact us</h3>
+
+        <div class="form-container">
+
+            <form action="#">
+            
+            <!-- First name -->
+            <div class="form-field">
+                <div class="form-field-label">
+                    <label for="firstname">First Name</label>
+                </div>
+                <div class="form-field-input">
+                    <input type="text" id="firstname" name="firstname" placeholder="Your first name...">
+                </div>
+            </div>
+
+            <!-- Last name -->
+            <div class="form-field">
+                <div class="form-field-label">
+                    <label for="lastname">Last Name</label>
+                </div>
+                <div class="form-field-input">
+                    <input type="text" id="lastname" name="lastname" placeholder="Your lastname name...">
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-field">
+                <div class="form-field-label">
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-field-input">
+                    <input type="email" id="email" name="email" placeholder="Your email...">
+                </div>
+            </div>
+
+            <!-- Subject -->
+            <div class="form-field">
+                <div class="form-field-label">
+                    <label for="subject">Subject</label>
+                </div>
+                <div class="form-field-input">
+                    <textarea name="subject" id="subject" cols="30" rows="10"></textarea>
+                </div>
+            </div>
+            <!-- Submit -->
+            <div class="submit-container">
+                <input type="submit" id="submit" value="SUBMIT">
+            </div>
+
+        </div> 
+        </form>
 
         <div class="about-us">
             <p class="about-us-content">Email: employee@thesmilecompany.ro</p>
