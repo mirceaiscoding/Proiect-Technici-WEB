@@ -117,11 +117,31 @@ function showDayAvailability(year, month, index) {
 
 }
 
-
+// Function to hide the day planner
 function hideDayPlanner(){
     const dayPlanner = document.getElementById("day-planner");
     dayPlanner.style.maxHeight = null;
 }
+
+// Function to show the day planner
+function showDayPlanner(dayPlanner) {
+    if (!dayPlanner.style.maxHeight) {
+        // Show the day planner
+        dayPlanner.style.maxHeight = dayPlanner.scrollHeight + "px";
+    }
+    scrollToDayPlanner();
+}
+
+// Scroll to see day planner
+function scrollToDayPlanner(){
+    console.log("Smooth scrolling to day planner");
+    const dayPlanner = document.getElementById("day-planner");
+    dayPlanner.scrollIntoView({
+        behavior: 'smooth',
+        block: "start"
+    });
+}
+
 
 // Adds the days of the month
 function addDays(year, month) {
@@ -155,10 +175,8 @@ function addDays(year, month) {
     
                 // Create the elements inside the day planner
                 showDayAvailability(year, month, index);
-                if (!dayPlanner.style.maxHeight) {
-                    // Show the day planner
-                    dayPlanner.style.maxHeight = dayPlanner.scrollHeight + "px";
-                }
+                showDayPlanner(dayPlanner);
+
             };
         }
     }
@@ -203,10 +221,8 @@ function addDaysCurrentMonth(year, month, day) {
 
             // Create the elements inside the day planner
             showDayAvailability(year, month, index);
-            if (!dayPlanner.style.maxHeight) {
-                // Show the day planner
-                dayPlanner.style.maxHeight = dayPlanner.scrollHeight + "px";
-            }
+            showDayPlanner(dayPlanner);
+
         };
 
         if (index == day) {
