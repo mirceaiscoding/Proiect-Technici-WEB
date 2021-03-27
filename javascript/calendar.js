@@ -9,7 +9,7 @@ const endWorkingDay = 17;
 
 
 // Array for months name
-const monthName = [
+const monthNames = [
     "January",
     "February",
     "March",
@@ -26,7 +26,7 @@ const monthName = [
 
 
 // Array for weekday names
-const weekdayName = [
+const weekdayNames = [
     "Sun",
     "Mon",
     "Tue",
@@ -188,7 +188,7 @@ function addDays(year, month) {
 
         // Function for when a valid day is clicked
         liElement.onclick = function () {
-            console.log("clicked " + dayIndex + " " + monthName[month] + " " + year);
+            console.log("clicked " + dayIndex + " " + monthNames[month] + " " + year);
             const dayPlanner = document.getElementById("day-planner");
 
             // Hide the day planner if the same day is selected twice
@@ -242,7 +242,7 @@ function addDaysCurrentMonth(year, month, day) {
 
         // Function for when a valid day is clicked
         liElement.onclick = function () {
-            console.log("clicked " + dayIndex + " " + monthName[month] + " " + year);
+            console.log("clicked " + dayIndex + " " + monthNames[month] + " " + year);
             const dayPlanner = document.getElementById("day-planner");
 
             // Hide the day planner if the same day is selected twice
@@ -289,7 +289,7 @@ function updateCalendar(date) {
 
     // Month name
     const month = date.getMonth();
-    const monthName = monthName[month];
+    const monthName = monthNames[month];
     console.log("Month is " + monthName);
 
     // Day
@@ -306,7 +306,7 @@ function updateCalendar(date) {
 
     // Weekday of the first day of the month
     const weekdayFirstDay = firstDay.getDay();
-    console.log("First day of the month is " + weekdayName[weekdayFirstDay]);
+    console.log("First day of the month is " + weekdayNames[weekdayFirstDay]);
 
     // Insert blank days so that the weekdays align
     addBlankDays((weekdayFirstDay + 6) % 7);
