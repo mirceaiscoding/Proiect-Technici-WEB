@@ -49,9 +49,13 @@
         color: white;
     }
 
+    .side-bar-item{
+        transition: letter-spacing 0.5s ease;
+    }
+
     .side-bar-item:hover {
-        transition: background-color 0.8s ease;
-        background-color: #03886b;
+        letter-spacing: 5px;
+        transition: letter-spacing 1s ease;
     }
 
     .side-bar {
