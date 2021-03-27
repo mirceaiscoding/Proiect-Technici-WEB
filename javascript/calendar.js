@@ -7,8 +7,9 @@ console.log(currentDate);
 const startWorkingDay = 9;
 const endWorkingDay = 17;
 
+
 // Array for months name
-const months = [
+const monthName = [
     "January",
     "February",
     "March",
@@ -23,8 +24,9 @@ const months = [
     "December"
 ];
 
+
 // Array for weekday names
-const days = [
+const weekdayName = [
     "Sun",
     "Mon",
     "Tue",
@@ -53,7 +55,7 @@ function getDaysInMonth(year, month) {
 
 
 // Hour format from number
-function toHour(number) {
+function toHourFormat(number) {
     let sol = "";
     if (number < 10) {
         sol += 0;
@@ -61,7 +63,6 @@ function toHour(number) {
     sol += number + ":00";
     return sol
 }
-
 
 
 function changeActiveDay(index) {
@@ -73,6 +74,7 @@ function changeActiveDay(index) {
     const newActiveDay = document.getElementById(("day-" + index));
     newActiveDay.className += " active";
 }
+
 
 // Shows hour intervals for a specific day
 function showDayAvailability(year, month, index) {
@@ -94,34 +96,40 @@ function showDayAvailability(year, month, index) {
     // Add hour intervalls
     for (let currentStartHour = startWorkingDay; currentStartHour < endWorkingDay; currentStartHour++) {
 
-        let li = document.createElement("li");
-        li.setAttribute("class", "day-planner-hour");
+        // Parent element for hour interval
+        let liElement = document.createElement("li");
+        liElement.setAttribute("class", "day-planner-hour");
 
+        // Child element start hour
         let divStartHour = document.createElement("div");
         divStartHour.setAttribute("class", "day-planner-start-hour");
-        divStartHour.innerText = toHour(currentStartHour);
-        li.appendChild(divStartHour);
+        divStartHour.innerText = toHourFormat(currentStartHour);
+        liElement.appendChild(divStartHour);
 
+        // Child element "-"
         let divBreak = document.createElement("div");
         divBreak.setAttribute("class", "day-planner-break");
         divBreak.innerText = "-";
-        li.appendChild(divBreak);
+        liElement.appendChild(divBreak);
 
+        // Child element end hour
         let divEndHour = document.createElement("div");
         divEndHour.setAttribute("class", "day-planner-end-hour");
-        divEndHour.innerText = toHour(currentStartHour + 1);
-        li.appendChild(divEndHour);
+        divEndHour.innerText = toHourFormat(currentStartHour + 1);
+        liElement.appendChild(divEndHour);
 
-        dayPlanner.appendChild(li);
+        dayPlanner.appendChild(liElement);
     }
 
 }
 
+
 // Function to hide the day planner
-function hideDayPlanner(){
+function hideDayPlanner() {
     const dayPlanner = document.getElementById("day-planner");
     dayPlanner.style.maxHeight = null;
 }
+
 
 // Function to show the day planner
 function showDayPlanner(dayPlanner) {
@@ -132,8 +140,9 @@ function showDayPlanner(dayPlanner) {
     scrollToDayPlanner();
 }
 
+
 // Scroll to see day planner
-function scrollToDayPlanner(){
+function scrollToDayPlanner() {
     console.log("Smooth scrolling to day planner");
     const dayPlanner = document.getElementById("day-planner");
     dayPlanner.scrollIntoView({
@@ -147,34 +156,34 @@ function scrollToDayPlanner(){
 function addDays(year, month) {
     const numberOfDays = getDaysInMonth(year, month);
     const daysElement = document.getElementById("days");
-    for (let index = 1; index <= numberOfDays; index++) {
+    for (let dayIndex = 1; dayIndex <= numberOfDays; dayIndex++) {
 
-        const currentDate = new Date(year, month, index);
+        const currentDate = new Date(year, month, dayIndex);
         const currenntWeekday = currentDate.getDay();
 
-        let li = document.createElement("li");
-        li.setAttribute("id", "day-" + index.toString());
-        li.innerText = index.toString();
-        daysElement.appendChild(li);
+        let liElement = document.createElement("li");
+        liElement.setAttribute("id", "day-" + dayIndex.toString());
+        liElement.innerText = dayIndex.toString();
+        daysElement.appendChild(liElement);
 
         if (currenntWeekday == 0 || currenntWeekday == 6) {
-            li.setAttribute("class", "day-weekend");
+            liElement.setAttribute("class", "day-weekend");
         } else {
-            li.setAttribute("class", "day");
-            li.onclick = function () {
-                console.log("clicked " + index + " " + months[month] + " " + year);
+            liElement.setAttribute("class", "day");
+            liElement.onclick = function () {
+                console.log("clicked " + dayIndex + " " + monthName[month] + " " + year);
                 const dayPlanner = document.getElementById("day-planner");
-    
+
                 // Hide the day planner if the same day is selected twice
-                if(li.classList.contains("active")){
-                    if (dayPlanner.style.maxHeight){
+                if (liElement.classList.contains("active")) {
+                    if (dayPlanner.style.maxHeight) {
                         hideDayPlanner();
                         return;
                     }
                 }
-    
+
                 // Create the elements inside the day planner
-                showDayAvailability(year, month, index);
+                showDayAvailability(year, month, dayIndex);
                 showDayPlanner(dayPlanner);
 
             };
@@ -182,55 +191,56 @@ function addDays(year, month) {
     }
 }
 
+
 // Adds the days of the month (when the shown month is the current month)
 function addDaysCurrentMonth(year, month, day) {
     const numberOfDays = getDaysInMonth(year, month);
     const daysElement = document.getElementById("days");
-    for (let index = 1; index <= numberOfDays; index++) {
+    for (let dayIndex = 1; dayIndex <= numberOfDays; dayIndex++) {
 
-        const currentDate = new Date(year, month, index);
+        const currentDate = new Date(year, month, dayIndex);
         const currenntWeekday = currentDate.getDay();
 
-        let li = document.createElement("li");
-        li.setAttribute("id", "day-" + index.toString());
-        li.innerText = index.toString();
-        daysElement.appendChild(li);
+        let liElement = document.createElement("li");
+        liElement.setAttribute("id", "day-" + dayIndex.toString());
+        liElement.innerText = dayIndex.toString();
+        daysElement.appendChild(liElement);
 
         if (currenntWeekday == 0 || currenntWeekday == 6) {
-            li.setAttribute("class", "day-weekend");
+            liElement.setAttribute("class", "day-weekend");
             continue;
         }
 
-        if (index < day) {
-            li.setAttribute("class", "day-before-current-date");
+        if (dayIndex < day) {
+            liElement.setAttribute("class", "day-before-current-date");
             continue;
         }
 
         // The rest of the days are clickable
-        li.onclick = function () {
-            console.log("clicked " + index + " " + months[month] + " " + year);
+        liElement.onclick = function () {
+            console.log("clicked " + dayIndex + " " + monthName[month] + " " + year);
             const dayPlanner = document.getElementById("day-planner");
 
             // Hide the day planner if the same day is selected twice
-            if(li.classList.contains("active")){
-                if (dayPlanner.style.maxHeight){
+            if (liElement.classList.contains("active")) {
+                if (dayPlanner.style.maxHeight) {
                     hideDayPlanner();
                     return;
                 }
             }
 
             // Create the elements inside the day planner
-            showDayAvailability(year, month, index);
+            showDayAvailability(year, month, dayIndex);
             showDayPlanner(dayPlanner);
 
         };
 
-        if (index == day) {
-            li.setAttribute("class", "day active");
+        if (dayIndex == day) {
+            liElement.setAttribute("class", "day active");
             continue;
         }
 
-        li.setAttribute("class", "day");
+        liElement.setAttribute("class", "day");
 
     }
 }
@@ -253,7 +263,7 @@ function updateCalendar(date) {
 
     // Month name
     const month = date.getMonth();
-    const monthName = months[month];
+    const monthName = monthName[month];
     console.log("Month is " + monthName);
 
     // Day
@@ -270,7 +280,7 @@ function updateCalendar(date) {
 
     // Weekday of the first day of the month
     const weekdayFirstDay = firstDay.getDay();
-    console.log("First day of the month is " + days[weekdayFirstDay]);
+    console.log("First day of the month is " + weekdayName[weekdayFirstDay]);
 
     // Insert blank days so that the weekdays align
     addBlankDays((weekdayFirstDay + 6) % 7);
@@ -303,9 +313,9 @@ function showPreviousMonth() {
 }
 
 
+// Variable that holds the currently shown date
 var shownDate = new Date(currentDate);
 
-updateCalendar(shownDate);
 
-const leftArrow = document.getElementById("arrow-left");
-const rightArrow = document.getElementById("arrow-right");
+// Generate the calendar after loading the page
+updateCalendar(shownDate);
