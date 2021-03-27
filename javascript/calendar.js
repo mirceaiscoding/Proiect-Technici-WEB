@@ -40,10 +40,10 @@ const weekdayName = [
 // Adds blank days so that saturday and sunday are on the 6th and 7th collum
 function addBlankDays(numberOfDays) {
     const daysElement = document.getElementById("days");
-    for (let index = 1; index <= numberOfDays; index++) {
-        let li = document.createElement("li");
-        li.setAttribute("class", "blank-day");
-        daysElement.appendChild(li);
+    for (let dayIndex = 1; dayIndex <= numberOfDays; dayIndex++) {
+        let liElement = document.createElement("li");
+        liElement.setAttribute("class", "blank-day");
+        daysElement.appendChild(liElement);
     }
 }
 
@@ -54,7 +54,7 @@ function getDaysInMonth(year, month) {
 }
 
 
-// Hour format from number
+// Hour format from number (ex: 10 -> 10:00)
 function toHourFormat(number) {
     let sol = "";
     if (number < 10) {
@@ -65,12 +65,18 @@ function toHourFormat(number) {
 }
 
 
+
+// Function that marks a day as active and removes the label from any other days
 function changeActiveDay(index) {
     console.log("Changing active day to " + index);
     const activeDay = document.getElementsByClassName("active");
-    if (activeDay.length != 0) {
-        activeDay[0].setAttribute("class", "day");
+
+    // Clear the active label for all days
+    for (let dayIndex = 0; dayIndex < activeDay.length; dayIndex++) {
+        activeDay[dayIndex].setAttribute("class", "day");
     }
+
+    // Add active label
     const newActiveDay = document.getElementById(("day-" + index));
     newActiveDay.className += " active";
 }
@@ -87,7 +93,7 @@ function showDayAvailability(year, month, index) {
     const dayPlanner = document.getElementById("day-planner");
     dayPlanner.innerHTML = "";
 
-    // Add title for day planner
+    // Show the requested date as a title for the day planner
     let title = document.createElement("li");
     title.setAttribute("class", "day-planner-title")
     title.innerText = "Make an appointment for " + index + "/" + (month + 1) + "/" + year;
@@ -118,6 +124,7 @@ function showDayAvailability(year, month, index) {
         divEndHour.innerText = toHourFormat(currentStartHour + 1);
         liElement.appendChild(divEndHour);
 
+        // Add the parent element to the list
         dayPlanner.appendChild(liElement);
     }
 
@@ -154,69 +161,86 @@ function scrollToDayPlanner() {
 
 // Adds the days of the month
 function addDays(year, month) {
+
     const numberOfDays = getDaysInMonth(year, month);
     const daysElement = document.getElementById("days");
+
     for (let dayIndex = 1; dayIndex <= numberOfDays; dayIndex++) {
 
-        const currentDate = new Date(year, month, dayIndex);
-        const currenntWeekday = currentDate.getDay();
+        // The date that is being added to the calendar
+        const dateToAdd = new Date(year, month, dayIndex);
+        const currenntWeekday = dateToAdd.getDay();
 
+        // Create an element for the day that is being added
         let liElement = document.createElement("li");
         liElement.setAttribute("id", "day-" + dayIndex.toString());
         liElement.innerText = dayIndex.toString();
         daysElement.appendChild(liElement);
 
+        // If the day is Saturday or Sunday mark it as weekend (unclickable)
         if (currenntWeekday == 0 || currenntWeekday == 6) {
             liElement.setAttribute("class", "day-weekend");
-        } else {
-            liElement.setAttribute("class", "day");
-            liElement.onclick = function () {
-                console.log("clicked " + dayIndex + " " + monthName[month] + " " + year);
-                const dayPlanner = document.getElementById("day-planner");
-
-                // Hide the day planner if the same day is selected twice
-                if (liElement.classList.contains("active")) {
-                    if (dayPlanner.style.maxHeight) {
-                        hideDayPlanner();
-                        return;
-                    }
-                }
-
-                // Create the elements inside the day planner
-                showDayAvailability(year, month, dayIndex);
-                showDayPlanner(dayPlanner);
-
-            };
+            continue;
         }
+
+        // The rest of the days are clickable
+        liElement.setAttribute("class", "day");
+
+        // Function for when a valid day is clicked
+        liElement.onclick = function () {
+            console.log("clicked " + dayIndex + " " + monthName[month] + " " + year);
+            const dayPlanner = document.getElementById("day-planner");
+
+            // Hide the day planner if the same day is selected twice
+            if (liElement.classList.contains("active")) {
+                if (dayPlanner.style.maxHeight) {
+                    hideDayPlanner();
+                    return;
+                }
+            }
+
+            // Create the elements inside the hourly day planner
+            showDayAvailability(year, month, dayIndex);
+            showDayPlanner(dayPlanner);
+
+        };
     }
 }
 
 
 // Adds the days of the month (when the shown month is the current month)
 function addDaysCurrentMonth(year, month, day) {
+
     const numberOfDays = getDaysInMonth(year, month);
     const daysElement = document.getElementById("days");
+
     for (let dayIndex = 1; dayIndex <= numberOfDays; dayIndex++) {
 
-        const currentDate = new Date(year, month, dayIndex);
-        const currenntWeekday = currentDate.getDay();
+        // The date that is being added to the calendar
+        const dateToAdd = new Date(year, month, dayIndex);
+        const currenntWeekday = dateToAdd.getDay();
 
+        // Create an element for the day that is being added
         let liElement = document.createElement("li");
         liElement.setAttribute("id", "day-" + dayIndex.toString());
         liElement.innerText = dayIndex.toString();
         daysElement.appendChild(liElement);
 
+        // If the day is Saturday or Sunday mark it as weekend (unclickable)
         if (currenntWeekday == 0 || currenntWeekday == 6) {
             liElement.setAttribute("class", "day-weekend");
             continue;
         }
 
+        // If the day comes before the current day it is unclickable
         if (dayIndex < day) {
             liElement.setAttribute("class", "day-before-current-date");
             continue;
         }
 
         // The rest of the days are clickable
+
+        // Function for when a valid day is clicked
         liElement.onclick = function () {
             console.log("clicked " + dayIndex + " " + monthName[month] + " " + year);
             const dayPlanner = document.getElementById("day-planner");
@@ -235,11 +259,13 @@ function addDaysCurrentMonth(year, month, day) {
 
         };
 
+        // If the added day coincides with the current day mark it as active
         if (dayIndex == day) {
             liElement.setAttribute("class", "day active");
             continue;
         }
 
+        // The remaining days are normal
         liElement.setAttribute("class", "day");
 
     }
@@ -304,10 +330,14 @@ function showNextMonth() {
 
 // Show the previous month
 function showPreviousMonth() {
+
+    // If the user tries to acces a month before the current date do nothing
     if (shownDate.getMonth() == currentDate.getMonth() && shownDate.getFullYear() == currentDate.getFullYear()) {
         console.log("Couldn't show the previous month!");
         return;
     }
+
+    // Show the previous month
     shownDate.setMonth(shownDate.getMonth() - 1)
     updateCalendar(shownDate);
 }
