@@ -82,6 +82,12 @@ function changeActiveDay(index) {
 }
 
 
+// Function that checks if the hour interval is free 
+function checkIfFree(year, month, index, currentStartHour){
+    // TODO
+    return true;
+}
+
 // Shows hour intervals for a specific day
 function showDayAvailability(year, month, index) {
     console.log("Show day availability")
@@ -123,6 +129,23 @@ function showDayAvailability(year, month, index) {
         divEndHour.setAttribute("class", "day-planner-end-hour");
         divEndHour.innerText = toHourFormat(currentStartHour + 1);
         liElement.appendChild(divEndHour);
+
+        // Check if the hour interval is free
+        if (checkIfFree(year, month, index, currentStartHour)){
+
+            // Add click event listner to parent element
+            liElement.onclick = function (){
+
+                // Generate the subtitle
+                const subtitleElement = document.getElementById("subtitle-choose-procedure");
+                console.log("Book a procedure for " + index + " " + monthNames[month] + " " + year + " at " + toHourFormat(currentStartHour));
+                subtitleElement.innerText = "Book a procedure for " + index + " " + monthNames[month] + " " + year + " at " + toHourFormat(currentStartHour);
+
+                
+
+            };
+        }
+
 
         // Add the parent element to the list
         dayPlanner.appendChild(liElement);
