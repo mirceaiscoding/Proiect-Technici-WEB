@@ -136,10 +136,8 @@ function showDayAvailability(year, month, index) {
             // Add click event listner to parent element
             liElement.onclick = function (){
 
-                // Generate the subtitle
-                const subtitleElement = document.getElementById("subtitle-choose-procedure");
-                console.log("Book a procedure for " + index + " " + monthNames[month] + " " + year + " at " + toHourFormat(currentStartHour));
-                subtitleElement.innerText = "Book a procedure for " + index + " " + monthNames[month] + " " + year + " at " + toHourFormat(currentStartHour);
+                // Open the new page
+                openAppointmentChooseProcedure(index, month, year, currentStartHour);
 
                 
 
@@ -152,6 +150,16 @@ function showDayAvailability(year, month, index) {
     }
 
 }
+
+// Opens appointment-choose-proceddure.html 
+function openAppointmentChooseProcedure(index, month, year, currentStartHour) {
+    const subtitleElement = document.getElementById("subtitle-choose-procedure");
+    console.log("Book a procedure for " + index + " " + monthNames[month] + " " + year + " at " + toHourFormat(currentStartHour));
+    localStorage.setItem("generatedSubtitle", "Finalize your appointment for " + index + " " + monthNames[month] + " " + year + " at " + toHourFormat(currentStartHour))
+    window.open("appointment-choose-procedure.html", "_self");
+}
+
+
 
 
 // Function to hide the day planner
