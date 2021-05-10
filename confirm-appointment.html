@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="side-bar-styles.css">
     <link rel="stylesheet" href="procedures-styles.css">
     <link rel="stylesheet" href="appointment-styles.css">
+    <link rel="stylesheet" href="contact-form-styles.css">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;300;400&display=swap" rel="stylesheet">
@@ -67,6 +68,38 @@
         <h3 class="subtitle" id = "subtitle">
             <!-- generated in javascript -->
         </h3>
+
+        <div class="form-container">
+
+            <form action="#">
+            
+            <!-- First name -->
+            <div class="form-field">
+                <div class="form-field-label">
+                    <label for="name">Full Name</label>
+                </div>
+                <div class="form-field-input">
+                    <input type="text" id="name" name="name" placeholder="Your Full Name..." required>
+                </div>
+            </div>
+
+            <!-- Email -->
+            <div class="form-field">
+                <div class="form-field-label">
+                    <label for="email">Email</label>
+                </div>
+                <div class="form-field-input">
+                    <input type="email" id="email" name="email" placeholder="Your email...">
+                </div>
+            </div>
+
+            <!-- Submit -->
+            <div class="submit-container">
+                <input type="submit" id="submit" value="SUBMIT">
+            </div>
+
+        </div> 
+        </form>
 
         <footer>
 

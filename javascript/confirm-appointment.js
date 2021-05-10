@@ -2,6 +2,9 @@ function showGeneratedSubtitle(){
     const subtitle = localStorage.getItem("generatedSubtitle");
     const subtitleElement = document.getElementById("subtitle");
     subtitleElement.innerText = subtitle;
+    console.log("Generated subtitle " + subtitle);
+
 }
 
-showGeneratedSubtitle();
+window.addEventListener('DOMContentLoaded', () => showGeneratedSubtitle());
+

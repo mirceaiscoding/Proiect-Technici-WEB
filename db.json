@@ -1,0 +1,20 @@
+{
+    "busy-time-intervals": [
+        {
+            "id": 1,
+            "day": 28,
+            "month": 5,
+            "year": 2001,
+            "start-hour": 9,
+            "customer-name": "Bina Mircea"
+        },
+        {
+            "id": 2,
+            "day": 29,
+            "month": 5,
+            "year": 2001,
+            "start-hour": 10,
+            "customer-name": "Marcel Dorel"
+        }
+    ]
+}
