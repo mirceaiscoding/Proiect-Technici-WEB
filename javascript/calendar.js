@@ -156,6 +156,10 @@ function openAppointmentChooseProcedure(index, month, year, currentStartHour) {
     const subtitleElement = document.getElementById("subtitle-choose-procedure");
     console.log("Book a procedure for " + index + " " + monthNames[month] + " " + year + " at " + toHourFormat(currentStartHour));
     localStorage.setItem("generatedSubtitle", "Finalize your appointment for " + index + " " + monthNames[month] + " " + year + " at " + toHourFormat(currentStartHour))
+    localStorage.setItem("day", index);
+    localStorage.setItem("month", monthNames[month]);
+    localStorage.setItem("year", year);
+    localStorage.setItem("start-hour", currentStartHour);
     window.open("confirm-appointment.html", "_self");
 }
 

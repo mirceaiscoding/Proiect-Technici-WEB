@@ -1,20 +1,58 @@
 {
-    "busy-time-intervals": [
-        {
-            "id": 1,
-            "day": 28,
-            "month": 5,
-            "year": 2001,
-            "start-hour": 9,
-            "customer-name": "Bina Mircea"
-        },
-        {
-            "id": 2,
-            "day": 29,
-            "month": 5,
-            "year": 2001,
-            "start-hour": 10,
-            "customer-name": "Marcel Dorel"
-        }
-    ]
+  "busy-time-intervals": [
+    {
+      "id": 1,
+      "day": "28",
+      "month": "May",
+      "year": "2001",
+      "start-hour": "9",
+      "customer-name": "Bina Mircea",
+      "email": "mircea.marian123@yahoo.com"
+    },
+    {
+      "id": 2,
+      "day": "29",
+      "month": "May",
+      "year": "2001",
+      "start-hour": "10",
+      "customer-name": "Marcel Dorel",
+      "email": "marcel55dorel@yahoo.com"
+    },
+    {
+      "day": "13",
+      "month": "May",
+      "year": "2021",
+      "start-hour": "11",
+      "customer-name": "Dorian Popa",
+      "email": "eusuntdorian@gmail.com",
+      "id": 3
+    },
+    {
+      "day": "13",
+      "month": "May",
+      "year": "2021",
+      "start-hour": "11",
+      "customer-name": "Andrei Popescu",
+      "email": "nume.nume@yahoo.com",
+      "id": 4
+    },
+    {
+      "day": "13",
+      "month": "May",
+      "year": "2021",
+      "start-hour": "11",
+      "customer-name": "Mihai Eminescu",
+      "email": "eminescu.mihai@yahoo.ro",
+      "id": 5
+    },
+    {
+      "day": "27",
+      "month": "May",
+      "year": "2021",
+      "start-hour": "12",
+      "customer-name": "Andrei Selaru",
+      "email": "selly@gmail.da",
+      "id": 6
+    }
+  ]
 }
