@@ -82,11 +82,7 @@ function changeActiveDay(index) {
 }
 
 
-// Function that checks if the hour interval is free 
-function checkIfFree(year, month, index, currentStartHour){
-    // TODO
-    return true;
-}
+
 
 // Shows hour intervals for a specific day
 function showDayAvailability(year, month, index) {
@@ -131,18 +127,47 @@ function showDayAvailability(year, month, index) {
         liElement.appendChild(divEndHour);
 
         // Check if the hour interval is free
-        if (checkIfFree(year, month, index, currentStartHour)){
 
-            // Add click event listner to parent element
-            liElement.onclick = function (){
 
-                // Open the new page
-                openAppointmentChooseProcedure(index, month, year, currentStartHour);
+        console.log("checking if the hour interval is free");
 
-                
+        fetch('http://localhost:3000/busy-time-intervals', {
+            method: 'get'
+        }).then(function (response) {
+            response.json().then((data) => {
 
-            };
-        }
+                const busyTimeIntervals = data;
+
+                // Check if the time interval can be found in busyTimeIntervals
+                console.log("checking", year.toString(), monthNames[month], index.toString(), currentStartHour.toString());
+
+                let busyFlag = false;
+                busyTimeIntervals.forEach(busyTimeInterval => {
+                    
+                    let busyYear = busyTimeInterval.year;
+                    let busyMonth = busyTimeInterval.month;
+                    let busyDay = busyTimeInterval.day;
+                    let busyStartHour = busyTimeInterval["start-hour"];
+                    console.log("checking with", busyYear, busyMonth, busyDay, busyStartHour);
+                    
+                    if (year.toString() == busyYear && monthNames[month] == busyMonth && index.toString() == busyDay && currentStartHour.toString() == busyStartHour) {
+                        console.log("Found a busy time interval at " + busyStartHour);
+                        liElement.setAttribute("class", "day-planner-hour-busy");
+                        busyFlag = true;
+                    }
+                });
+
+                if (busyFlag == false) {
+
+                    // Add click event listner to parent element
+                    liElement.onclick = function () {
+                        // Open the new page
+                        openAppointmentChooseProcedure(index, month, year, currentStartHour);
+                    };
+                }
+
+            })
+        })
 
 
         // Add the parent element to the list
@@ -381,6 +406,5 @@ function showPreviousMonth() {
 // Variable that holds the currently shown date
 var shownDate = new Date(currentDate);
 
-
 // Generate the calendar after loading the page
-updateCalendar(shownDate);
+window.addEventListener('DOMContentLoaded', updateCalendar(shownDate));

@@ -160,6 +160,16 @@ ul {
     cursor: pointer;
 }
 
+.day-planner-hour-busy {
+    display: flex;
+    transition: background-color 0.5s ease;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: #8803039f;
+    color: white;
+    padding: 10px;
+}
+
 .day-planner-hour:hover {
     background-color: #03886b9f;
     color: white;
