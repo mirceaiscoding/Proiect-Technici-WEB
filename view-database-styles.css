@@ -1,0 +1,9 @@
+#busy-time-intervals-div{
+    display: grid;
+    grid-template-columns: auto, auto, auto;
+    transition: background-color 0.5s ease;
+    background-color: white;
+    padding: 5px;
+    border: 2.5px solid #1abc9c;
+
+}
