@@ -26,7 +26,7 @@ const addBusyTimeInterval = async (e) => {
     // put the new busy date into db.json
     const newBusyTimeInterval = {
         "day": day,
-        "month": month,
+        "month": month.substring(0, 3),
         "year": year,
         "start-hour": startHour,
         "customer-name": form.name.value,
