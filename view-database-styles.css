@@ -1,9 +1,22 @@
 #busy-time-intervals-div{
     display: grid;
-    grid-template-columns: auto, auto, auto;
+    grid-template-columns: auto auto auto;
     transition: background-color 0.5s ease;
     background-color: white;
-    padding: 5px;
+    padding: 2px;
     border: 2.5px solid #1abc9c;
+    grid-gap: 2px;
+}
 
+.remove-past-reservarions{
+    background-color: #1abc9c; 
+    width: 100%;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
 }
