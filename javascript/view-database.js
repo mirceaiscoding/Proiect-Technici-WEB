@@ -57,6 +57,31 @@ function fetchReservations() {
                 dateElement.setAttribute("class", "date");
                 dateElement.innerText = reservation["day"] + " " + reservation["month"] + " " + reservation["year"] + " at " + reservation["start-hour"];
 
+                let editElement = document.createElement("img");
+                editElement.src = "icon/edit_black_24dp.svg";
+                editElement.setAttribute("class", "edit");
+                editElement.onclick = function () {
+                    fetch('http://localhost:3000/busy-time-intervals/' + reservation["id"])
+                        .then(function (response) {
+                            // Trasform server response to get the dogs
+                            response.json().then(function (timeInterval) {
+                                newTimeInterval = timeInterval;
+                                newTimeInterval["name"] = "new name";
+                                fetch('http://localhost:3000/busy-time-intervals/' + reservation["id"], {
+                                    method: 'PUT',
+                                    headers: {
+                                        "Content-type": "application/json"
+                                    },
+                                    body: JSON.stringify(newTimeInterval)
+                                }).then(function () {
+                                    window.location.reload();
+                                });
+                            
+                            });
+                        });
+                };
+                
+
                 let trashElement = document.createElement("img");
                 trashElement.src = "icon/delete_black_24dp.svg";
                 trashElement.setAttribute("class", "trash");
@@ -74,6 +99,7 @@ function fetchReservations() {
                 busyIntervalsDiv.appendChild(nameElement);
                 busyIntervalsDiv.appendChild(emailElement);
                 busyIntervalsDiv.appendChild(dateElement);
+                busyIntervalsDiv.appendChild(editElement);
                 busyIntervalsDiv.appendChild(trashElement);
             });
 

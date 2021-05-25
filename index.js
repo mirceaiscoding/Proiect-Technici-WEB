@@ -43,7 +43,7 @@ app.get("/busy-time-intervals/:id", (req, res) => {
     });
 
     if (idFound) {
-        res.json(foundTimeIntervalog);
+        res.json(foundTimeInterval);
     } else {
         res.status(404).send(`Time Interval ${id} was not found`);
     }
