@@ -57,9 +57,24 @@ function fetchReservations() {
                 dateElement.setAttribute("class", "date");
                 dateElement.innerText = reservation["day"] + " " + reservation["month"] + " " + reservation["year"] + " at " + reservation["start-hour"];
 
+                let trashElement = document.createElement("img");
+                trashElement.src = "icon/delete_black_24dp.svg";
+                trashElement.setAttribute("class", "trash");
+                trashElement.onclick = function () {
+                    fetch('http://localhost:3000/busy-time-intervals/' + reservation["id"], {
+                        method: 'delete',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    }).then(function (response) {
+                        window.location.reload();
+                    })
+                };
+
                 busyIntervalsDiv.appendChild(nameElement);
                 busyIntervalsDiv.appendChild(emailElement);
                 busyIntervalsDiv.appendChild(dateElement);
+                busyIntervalsDiv.appendChild(trashElement);
             });
 
         })
