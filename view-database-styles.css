@@ -9,18 +9,105 @@
 }
 
 .remove-past-reservarions{
-    background-color: #1abc9c; 
+    border: 2.5px solid #1abc9c; 
+    border-top: none;
     width: 100%;
-    border: none;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     cursor: pointer;
+    margin: 0;
 }
 
 .trash, .edit{
     cursor: pointer;
+}
+
+.form-container{
+    display: none;   
+}
+
+@media (max-width: 768px){
+    .form-field{
+        grid-template-columns: auto;
+    }
+}
+
+@media (min-width: 768px){
+    .form-field{
+        grid-template-columns: 20% auto;
+    }
+
+}
+
+.form-field{
+    display: grid;
+    margin: 10px;
+}
+
+.form-container{
+    background-color: #1abc9c;
+    padding: 20px;
+    margin-bottom: 5%;
+}
+
+.form-field-label{
+    color: white;
+    display: inline-block;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+#firstname, #lastname, #name, #email, #subject{
+    transition: 0.3s box-shadow;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    resize: vertical;
+    background-color: #fffffffc;
+    color: #03886b;
+    padding: 12px;
+}
+
+#firstname:hover, #lastname:hover, #name:hover, #email:hover, #subject:hover{
+    box-shadow:-8px 10px 10px 4px  rgba(8, 8, 8, 0.123);
+}
+
+::placeholder{
+    color: #03886b;
+}
+
+
+
+.submit-container{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+#submit{
+    transition: background-color 0.5s ease-out;
+    cursor: pointer;
+    width: 100px;
+    border: none;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    color: #1abc9c;
+    background-color: #fffffffc;
+    border: 1px solid #1abc9c;
+
+
+}
+
+#submit:hover{
+    transition: background-color 0.5s ease-in;
+    color: #fffffffc;
+    background-color: #1abc9c;
+    border: 1px solid #fffffffc;
+
 }

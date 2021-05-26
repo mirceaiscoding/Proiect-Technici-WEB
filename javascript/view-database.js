@@ -61,25 +61,37 @@ function fetchReservations() {
                 editElement.src = "icon/edit_black_24dp.svg";
                 editElement.setAttribute("class", "edit");
                 editElement.onclick = function () {
+
                     fetch('http://localhost:3000/busy-time-intervals/' + reservation["id"])
                         .then(function (response) {
                             response.json().then(function (timeInterval) {
-                                newTimeInterval = timeInterval;
-                                newTimeInterval["customer-name"] = "new name";
-                                fetch('http://localhost:3000/busy-time-intervals/' + reservation["id"], {
-                                    method: 'PUT',
-                                    headers: {
-                                        "Content-type": "application/json"
-                                    },
-                                    body: JSON.stringify(newTimeInterval)
-                                }).then(function () {
-                                    window.location.reload();
+
+                                const formNewName = document.getElementById("form-container");
+                                formNewName.style.display = "block";
+                                formNewName.addEventListener('submit', event => {
+
+                                    event.preventDefault();
+                                    formNewName.style.display = "none";
+
+                                    let newTimeInterval = timeInterval;
+                                    newTimeInterval["customer-name"] = formNewName.name.value;
+
+                                    fetch('http://localhost:3000/busy-time-intervals/' + reservation["id"], {
+                                        method: 'PUT',
+                                        headers: {
+                                            "Content-type": "application/json"
+                                        },
+                                        body: JSON.stringify(newTimeInterval)
+                                    }).then(function () {
+                                        window.location.reload();
+                                    });
+
                                 });
-                            
+
                             });
                         });
                 };
-                
+
 
                 let trashElement = document.createElement("img");
                 trashElement.src = "icon/delete_black_24dp.svg";
@@ -116,7 +128,7 @@ function removePastReservations() {
         method: 'get'
     }).then(function (response) {
         response.json().then((data) => {
-            
+
             let responses = 0;
             let expectedResponses = 0;
 
@@ -125,26 +137,26 @@ function removePastReservations() {
                 let year = Number(reservation["year"]);
                 let month = Number(monthNumber[reservation["month"]]) - 1;
                 let day = Number(reservation["day"]);
-                
+
                 let date = new Date(year, month, day);
                 let currentDate = new Date();
                 console.log(date);
 
-                if (date < currentDate){
+                if (date < currentDate) {
                     expectedResponses++;
                     fetch('http://localhost:3000/busy-time-intervals/' + reservation["id"], {
                         method: 'delete',
                         headers: {
                             'Content-Type': 'application/json'
                         }
-                    }).then(function(response){
+                    }).then(function (response) {
                         window.location.reload();
                     })
                 }
             });
 
         })
-    
+
     })
 
 }
