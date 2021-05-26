@@ -63,10 +63,9 @@ function fetchReservations() {
                 editElement.onclick = function () {
                     fetch('http://localhost:3000/busy-time-intervals/' + reservation["id"])
                         .then(function (response) {
-                            // Trasform server response to get the dogs
                             response.json().then(function (timeInterval) {
                                 newTimeInterval = timeInterval;
-                                newTimeInterval["name"] = "new name";
+                                newTimeInterval["customer-name"] = "new name";
                                 fetch('http://localhost:3000/busy-time-intervals/' + reservation["id"], {
                                     method: 'PUT',
                                     headers: {
